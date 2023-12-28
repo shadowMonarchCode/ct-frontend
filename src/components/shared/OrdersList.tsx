@@ -1,8 +1,8 @@
-
-const OrdersList = (orders: Order[]) => {
+const OrdersList = () => {
   return (
     <div className="rounded-md border">
       {/* <DataTable columns={columns} data={orders} /> */}
+      Order List
     </div>
   );
 };

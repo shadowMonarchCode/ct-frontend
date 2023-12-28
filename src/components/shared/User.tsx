@@ -1,7 +1,7 @@
 import { IUser } from "@/types";
-import Chart from "chart.js/auto";
+// import Chart from "chart.js/auto";
 import Loader from "./Loader";
-import { orderClassification } from "@/lib/utils";
+// import { orderClassification } from "@/lib/utils";
 import OrderTable from "../tables/OrderTable";
 
 interface UserDataProps {
@@ -9,30 +9,32 @@ interface UserDataProps {
 }
 
 const User = ({ data }: UserDataProps) => {
-  (async function () {
-    const orderData = {
-      labels: ["Pending", "Trial", "Delivered", "Completed", "Cancelled"],
-      datasets: [
-        {
-          label: "Orders",
-          data: orderClassification(data.orders),
-          backgroundColor: [
-            "rgb(255, 215, 0)",
-            "rgb(135, 206, 235)",
-            "rgb(50, 205, 50)",
-            "rgb(70, 130, 180)",
-            "rgb(220, 20, 60)",
-          ],
-          hoverOffset: 4,
-        },
-      ],
-    };
-    const chartElement = document.getElementById("okCanvas2");
-    new Chart(chartElement, {
-      type: "doughnut",
-      data: orderData,
-    });
-  })();
+  // (async function () {
+  //   const orderData = {
+  //     labels: ["Pending", "Trial", "Delivered", "Completed", "Cancelled"],
+  //     datasets: [
+  //       {
+  //         label: "Orders",
+  //         data: orderClassification(data.orders),
+  //         backgroundColor: [
+  //           "rgb(255, 215, 0)",
+  //           "rgb(135, 206, 235)",
+  //           "rgb(50, 205, 50)",
+  //           "rgb(70, 130, 180)",
+  //           "rgb(220, 20, 60)",
+  //         ],
+  //         hoverOffset: 4,
+  //       },
+  //     ],
+  //   };
+  //   const chartElement = document.getElementById("okCanvas2");
+  //   if (chartElement) {
+  //     new Chart(chartElement, {
+  //       type: "doughnut",
+  //       data: orderData,
+  //     });
+  //   }
+  // })();
   return (
     <div className="flex flex-wrap gap-6 mt-4 ml-2">
       <div className="">

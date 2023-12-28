@@ -46,9 +46,10 @@ type ProdObj = {
   sherwani: string;
   suit2: string;
   suit3: string;
+  [key: string]: string;
 };
 
-const ProductsKeys = {
+const ProductsKeys: ProdObj = {
   kurta: "Kurta",
   pajama: "Pajama",
   trouser: "Trouser",
@@ -65,7 +66,7 @@ export const updateProducts = (productObj: ProdObj) => {
   const products: Products[] = Object.entries(productObj)
     .filter((product) => Number(product[1]) > 0)
     .map(([type, amount]) => ({
-      type: ProductsKeys[type as string],
+      type: ProductsKeys[type],
       amount: Number(amount),
     }));
   return products;
