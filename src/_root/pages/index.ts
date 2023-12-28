@@ -1,0 +1,10 @@
+export { default as Home } from "./Home";
+export { default as AllCustomers } from "./AllCustomers";
+export { default as AllOrders } from "./AllOrders";
+export { default as AddOrder } from "./AddOrder";
+export { default as EditOrder } from "./EditOrder";
+export { default as Order } from "./Order";
+export { default as Report } from "./Report";
+export { default as ShowDeadline } from "./ShowDeadline";
+export { default as Profile } from "./Profile";
+export { default as ViewUser } from "./ViewUser";
