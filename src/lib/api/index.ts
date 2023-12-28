@@ -1,4 +1,4 @@
-import { Order, IUser, Products, Measurements, Dates } from "@/types";
+import { Order, IUser, Products, Measurements, Dates, IOrder } from "@/types";
 
 // Define an interface for the response data
 interface LoginResponse {
@@ -202,5 +202,31 @@ export const createOrder = async (
       success: false,
       message: "There is an issue. Please try again later.",
     };
+  }
+};
+
+export const getOrderById = async (orderId: string): Promise<IOrder | null> => {
+  try {
+    if (!token) {
+      console.error("JWT token is missing.");
+      return null;
+    }
+    const response = await fetch(`${API_URL}/order/get/${orderId}`, {
+      method: "GET",
+      headers: {
+        Authorization: token,
+      },
+    });
+
+    if (response.ok) {
+      const order: IOrder = await response.json();
+      return order;
+    } else {
+      console.error(`Failed to get users: ${response.status}`);
+      return null;
+    }
+  } catch (error) {
+    console.error("Error during fetch:", error);
+    return null;
   }
 };

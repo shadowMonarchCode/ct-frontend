@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/table";
 import { dateFormat } from "@/lib/utils";
 import { Order } from "@/types";
+import { Link } from "react-router-dom";
 
 interface OrderTableProps {
   orders: Order[];
@@ -36,7 +37,7 @@ const OrderTable = ({ orders }: OrderTableProps) => {
           {orders.map((order) => (
             <TableRow key={order._id}>
               <TableCell className="font-medium text-center">
-                {order.order}
+                <Link to={`/order/${order._id}`}>{order.order}</Link>
               </TableCell>
               <TableCell className="text-center">
                 {dateFormat(order.dates.order)}
